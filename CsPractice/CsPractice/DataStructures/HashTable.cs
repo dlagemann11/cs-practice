@@ -113,6 +113,7 @@ namespace CsPractice.DataStructures
 
         private void DeleteNode(int index, HashTableNode<K, V> nodeToDelete)
         {
+            // TODO: Problem if this node has children?
             if (array[index] == nodeToDelete)
             {
                 array[index] = null;

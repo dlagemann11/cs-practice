@@ -8,6 +8,8 @@ namespace CsPracticeTests
     [TestClass]
     public class SimpleDataStructureTests
     {
+        // TODO: Need to refactor these into individual tests. Also more tests
+
         [TestMethod]
         public void StackTest()
         {
@@ -143,6 +145,7 @@ namespace CsPracticeTests
         [TestMethod]
         public void HashTableTest()
         {
+            // TODO: Need tests for hash collisions
             HashTable<int, string> hashTable = new HashTable<int, string>();
             hashTable.Add(1, "foo");
             hashTable.Add(2, "fu");
