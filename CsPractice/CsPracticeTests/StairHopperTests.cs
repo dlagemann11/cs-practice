@@ -38,16 +38,6 @@ namespace CsPracticeTests
         }
 
         [TestMethod]
-        public void BottomUpThirtyStairNaive()
-        {
-            StairHopper hopper = new StairHopper();
-
-            int result = hopper.BottomUpNaiveStairHop(30);
-
-            Assert.AreEqual(53798080, result);
-        }
-
-        [TestMethod]
         public void BottomUpOneStairSmart()
         {
             StairHopper hopper = new StairHopper();
@@ -115,16 +105,6 @@ namespace CsPracticeTests
             int result = hopper.TopDownNaiveStairHop(3);
 
             Assert.AreEqual(4, result);
-        }
-
-        [TestMethod]
-        public void TopDownThirtyStairNaive()
-        {
-            StairHopper hopper = new StairHopper();
-
-            int result = hopper.TopDownNaiveStairHop(30);
-
-            Assert.AreEqual(53798080, result);
         }
 
         [TestMethod]
