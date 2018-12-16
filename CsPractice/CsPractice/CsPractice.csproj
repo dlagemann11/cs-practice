@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\BinarySearcher.cs" />
+    <Compile Include="Algorithms\BitManipulator.cs" />
     <Compile Include="Algorithms\BreadthFirstSearcher.cs" />
     <Compile Include="Algorithms\DepthFirstSearcher.cs" />
     <Compile Include="Algorithms\MergeSorter.cs" />
@@ -65,7 +66,7 @@
     <Compile Include="DataStructures\Trees\TreeNode.cs" />
     <Compile Include="DataStructures\Trees\Trie.cs" />
     <Compile Include="DataStructures\Trees\TrieNode.cs" />
-    <Compile Include="Problems\BitInsertion.cs" />
+    <Compile Include="Problems\BitInserter.cs" />
     <Compile Include="Problems\BookSearcher.cs" />
     <Compile Include="Problems\BstFromSortedArray.cs" />
     <Compile Include="Problems\KthToLastLinkedList.cs" />

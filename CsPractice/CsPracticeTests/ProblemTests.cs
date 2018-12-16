@@ -164,37 +164,7 @@ namespace CsPracticeTests
         }
 
         #endregion
-
-        #region BitInsertion
-
-        [TestMethod]
-        public void TestBitInsertion()
-        {
-            BitInsertion inserter = new BitInsertion();
-            BitArray N = new BitArray(11);
-            BitArray M = new BitArray(5);
-            N[0] = true;
-            M[0] = true;
-            M[3] = true;
-            M[4] = true;
-
-            BitArray result = inserter.Insert(N, M, 2, 6);
-
-            Assert.AreEqual(true, result[0]);
-            Assert.AreEqual(false, result[1]);
-            Assert.AreEqual(false, result[2]);
-            Assert.AreEqual(false, result[3]);
-            Assert.AreEqual(true, result[4]);
-            Assert.AreEqual(false, result[5]);
-            Assert.AreEqual(false, result[6]);
-            Assert.AreEqual(true, result[7]);
-            Assert.AreEqual(true, result[8]);
-            Assert.AreEqual(false, result[9]);
-            Assert.AreEqual(false, result[10]);
-        }
-
-        #endregion
-
+        
         #region BookSearcher
 
         [TestMethod]

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearchTests.cs" />
+    <Compile Include="BitManipulationTests.cs" />
     <Compile Include="GraphTests.cs" />
     <Compile Include="TestUtilities.cs" />
     <Compile Include="ProblemTests.cs" />
