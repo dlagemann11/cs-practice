@@ -69,6 +69,7 @@
     <Compile Include="Problems\BitInserter.cs" />
     <Compile Include="Problems\BookSearcher.cs" />
     <Compile Include="Problems\BstFromSortedArray.cs" />
+    <Compile Include="Problems\DecimalToBinaryStringConverter.cs" />
     <Compile Include="Problems\KthToLastLinkedList.cs" />
     <Compile Include="Problems\StairHopper.cs" />
     <Compile Include="Problems\ThreeStacksFromArray.cs" />
@@ -85,6 +86,9 @@
     <Content Include="Resources\words_alpha.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Problems\BitManipulation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

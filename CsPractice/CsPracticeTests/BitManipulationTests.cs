@@ -85,7 +85,7 @@ namespace CsPracticeTests
 
         #endregion
 
-        #region BitInsertion test
+        #region BitInsertion tests
 
         [TestMethod]
         public void BasicBitInsertionTest()
@@ -121,6 +121,52 @@ namespace CsPracticeTests
             int result = inserter.Insert(insertionTarget, insertion, 5, 5); // Expected: 1100001
 
             Assert.AreEqual(97, result);
+        }
+
+        #endregion
+
+        #region DoubleToBinaryStringConverter tests
+
+        [TestMethod]
+        public void BasicBinaryStringConverterTest()
+        {
+            DecimalToBinaryStringConverter converter = new DecimalToBinaryStringConverter();
+
+            string result = converter.Convert(0.375d); // 0.25 + 0.125, or 1/4 + 1/8
+
+            Assert.AreEqual("0.011", result);
+        }
+
+        [TestMethod]
+        public void BigBinaryStringConverterTest()
+        {
+            DecimalToBinaryStringConverter converter = new DecimalToBinaryStringConverter();
+
+            string result = converter.Convert(0.6416015625d); // 1/2^1 + 1/2^3 + 1/2^6 + 1/2^10
+
+            Assert.AreEqual("0.1010010001", result);
+        }
+
+        [TestMethod]
+        public void RangeBinaryStringConverterTest()
+        {
+            DecimalToBinaryStringConverter converter = new DecimalToBinaryStringConverter();
+
+            string result1 = converter.Convert(1.1d);
+            string result2 = converter.Convert(-0.1d);
+
+            Assert.AreEqual("ERROR", result1);
+            Assert.AreEqual("ERROR", result2);
+        }
+
+        [TestMethod]
+        public void InvalidBinaryStringConverterTest()
+        {
+            DecimalToBinaryStringConverter converter = new DecimalToBinaryStringConverter();
+
+            string result = converter.Convert(0.8d);
+
+            Assert.AreEqual("ERROR", result);
         }
 
         #endregion
