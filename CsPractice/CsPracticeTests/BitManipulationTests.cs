@@ -170,5 +170,69 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region BitFlipWinner tests
+
+        [TestMethod]
+        public void BasicBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(1775); // 11011101111
+
+            Assert.AreEqual(8, result);
+        }
+
+        [TestMethod]
+        public void RightZeroBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(14); // 1110
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        public void ManyZerosBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(1025); // 10000000001
+
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void ZeroBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(0);
+
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void NegativeBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(-8); // 1...1000
+
+            Assert.AreEqual(30, result);
+        }
+
+        [TestMethod]
+        public void AllOnesBitFlipWinTest()
+        {
+            BitFlipWinner winner = new BitFlipWinner();
+
+            int result = winner.Evaluate(-1);
+
+            Assert.AreEqual(32, result);
+        }
+
+        #endregion
     }
 }
