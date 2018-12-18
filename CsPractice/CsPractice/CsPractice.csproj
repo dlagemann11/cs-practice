@@ -68,6 +68,7 @@
     <Compile Include="DataStructures\Trees\TrieNode.cs" />
     <Compile Include="Problems\BitManipulation\BitFlipWinner.cs" />
     <Compile Include="Problems\BitManipulation\BitInserter.cs" />
+    <Compile Include="Problems\BitManipulation\NextAndPreviousWithSameOnes.cs" />
     <Compile Include="Problems\BookSearcher.cs" />
     <Compile Include="Problems\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using CsPractice.Algorithms;
 using CsPractice.Problems;
@@ -231,6 +230,54 @@ namespace CsPracticeTests
             int result = winner.Evaluate(-1);
 
             Assert.AreEqual(32, result);
+        }
+
+        #endregion
+
+        #region NextAndPreviousWithSameOnes tests
+
+        [TestMethod]
+        public void BasicNextAndPreviousOnesTest()
+        {
+            NextAndPreviousWithSameOnesSolver solver = new NextAndPreviousWithSameOnesSolver();
+
+            int[] result = solver.Solve(38);
+
+            Assert.AreEqual(41, result[0]);
+            Assert.AreEqual(37, result[1]);
+        }
+
+        [TestMethod]
+        public void SmallNextAndPreviousOnesTest()
+        {
+            NextAndPreviousWithSameOnesSolver solver = new NextAndPreviousWithSameOnesSolver();
+
+            int[] result = solver.Solve(8);
+
+            Assert.AreEqual(16, result[0]);
+            Assert.AreEqual(4, result[1]);
+        }
+
+        [TestMethod]
+        public void ManyOnesNextAndPreviousOnesTest()
+        {
+            NextAndPreviousWithSameOnesSolver solver = new NextAndPreviousWithSameOnesSolver();
+
+            int[] result = solver.Solve(15);
+
+            Assert.AreEqual(23, result[0]);
+            Assert.AreEqual(-1, result[1]);
+        }
+
+        [TestMethod]
+        public void InvalidNextAndPreviousOnesTest()
+        {
+            NextAndPreviousWithSameOnesSolver solver = new NextAndPreviousWithSameOnesSolver();
+
+            int[] result = solver.Solve(0);
+
+            Assert.AreEqual(-1, result[0]);
+            Assert.AreEqual(-1, result[1]);
         }
 
         #endregion

@@ -1,6 +1,4 @@
-﻿using CsPractice.Algorithms;
-
-namespace CsPractice.Problems
+﻿namespace CsPractice.Problems
 {
     public class BitInserter
     {
