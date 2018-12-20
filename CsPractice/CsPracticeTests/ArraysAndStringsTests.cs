@@ -122,5 +122,53 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region URLifier
+
+        [TestMethod]
+        public void BasicURLifyTest()
+        {
+            URLifier mutator = new URLifier();
+            char[] input = "Mr John Smith    ".ToCharArray();
+
+            mutator.Urlify(input, 13);
+
+            Assert.AreEqual("Mr%20John%20Smith", new string(input));
+        }
+
+        [TestMethod]
+        public void LongURLifyTest()
+        {
+            URLifier mutator = new URLifier();
+            char[] input = "Mr John Smith and his wife Mrs Smith              ".ToCharArray();
+
+            mutator.Urlify(input, 36);
+
+            Assert.AreEqual("Mr%20John%20Smith%20and%20his%20wife%20Mrs%20Smith", new string(input));
+        }
+
+        [TestMethod]
+        public void NoSpaceURLifyTest()
+        {
+            URLifier mutator = new URLifier();
+            char[] input = "LongStringNoSpaces".ToCharArray();
+
+            mutator.Urlify(input, 18);
+
+            Assert.AreEqual("LongStringNoSpaces", new string(input));
+        }
+
+        [TestMethod]
+        public void EmptyStringURLifyTest()
+        {
+            URLifier mutator = new URLifier();
+            char[] input = "".ToCharArray();
+
+            mutator.Urlify(input, 0);
+
+            Assert.AreEqual("", new string(input));
+        }
+
+        #endregion
     }
 }

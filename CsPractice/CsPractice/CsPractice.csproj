@@ -68,6 +68,7 @@
     <Compile Include="DataStructures\Trees\TrieNode.cs" />
     <Compile Include="Problems\ArraysAndStrings\StringIsUniqueCharsSolver.cs" />
     <Compile Include="Problems\ArraysAndStrings\StringPermutationChecker.cs" />
+    <Compile Include="Problems\ArraysAndStrings\URLifier.cs" />
     <Compile Include="Problems\BitManipulation\BitFlipWinner.cs" />
     <Compile Include="Problems\BitManipulation\BitInserter.cs" />
     <Compile Include="Problems\BitManipulation\NextAndPreviousWithSameOnes.cs" />
