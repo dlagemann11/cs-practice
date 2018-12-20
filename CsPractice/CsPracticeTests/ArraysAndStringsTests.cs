@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CsPractice.Problems.ArraysAndStrings;
 
 namespace CsPracticeTests
@@ -167,6 +166,70 @@ namespace CsPracticeTests
             mutator.Urlify(input, 0);
 
             Assert.AreEqual("", new string(input));
+        }
+
+        #endregion
+
+        #region PalindromPermutationChecker
+
+        [TestMethod]
+        public void OddPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("Tact Coa");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void EvenPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("Never even or odd");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ExtraCharsPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("A man, Panama, a plan, a canal –");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void EmptyPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void NegativeOddPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("TacoTa");
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void NegativeEvenPalindromPermutationTest()
+        {
+            PalindromePermutationChecker checker = new PalindromePermutationChecker();
+
+            bool result = checker.IsPalindromePermutation("Neven odd or even");
+
+            Assert.IsFalse(result);
         }
 
         #endregion
