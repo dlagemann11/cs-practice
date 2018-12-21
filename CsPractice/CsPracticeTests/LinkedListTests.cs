@@ -136,6 +136,28 @@ namespace CsPracticeTests
         }
 
         [TestMethod]
+        public void TestKthToLastFirstSuccess()
+        {
+            KthToLastLinkedList problem = new KthToLastLinkedList();
+            SingleLinkNode<int> head = GenerateSimpleLinkedList();
+
+            int k = problem.KthToLast(10, head);
+
+            Assert.AreEqual(1, k);
+        }
+
+        [TestMethod]
+        public void TestKthToLastLastSuccess()
+        {
+            KthToLastLinkedList problem = new KthToLastLinkedList();
+            SingleLinkNode<int> head = GenerateSimpleLinkedList();
+
+            int k = problem.KthToLast(1, head);
+
+            Assert.AreEqual(10, k);
+        }
+
+        [TestMethod]
         public void TestKthToLastKTooSmall()
         {
             KthToLastLinkedList problem = new KthToLastLinkedList();

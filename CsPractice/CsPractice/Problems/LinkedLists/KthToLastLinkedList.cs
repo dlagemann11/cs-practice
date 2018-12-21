@@ -12,20 +12,25 @@ namespace CsPractice.Problems.LinkedLists
             {
                 throw new ArgumentException("k must be greater than 0");
             }
-            ArrayList<T> list = new ArrayList<T>();
-            int i;
-            for (i = 0; head != null; i++)
+
+            SingleLinkNode<T> currentNode = head;
+            SingleLinkNode<T> runnerNode = head;
+            for (int i = 1; i < k; i++)
             {
-                list.Append(head.Data);
-                head = head.Next;
+                runnerNode = runnerNode.Next;
+                if (runnerNode == null)
+                {
+                    throw new ArgumentException("k is too large for the linked list provided.");
+                }
             }
 
-            if (k > i)
+            while (runnerNode.Next != null)
             {
-                throw new ArgumentException("k is too large for the linked list provided");
+                currentNode = currentNode.Next;
+                runnerNode = runnerNode.Next;
             }
 
-            return list[i - k];
+            return currentNode.Data;
         }
     }
 }
