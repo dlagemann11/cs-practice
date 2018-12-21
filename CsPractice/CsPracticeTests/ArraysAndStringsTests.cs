@@ -233,5 +233,109 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region OneAwayChecker
+
+        [TestMethod]
+        public void PositiveReplaceOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "bale");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void PositiveRemoveMiddleOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "ple");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void PositiveRemoveEndOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "pal");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void PositiveInsertMiddleOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pae", "pale");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void PositiveInsertEndOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "pales");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void NegativeReplaceTwoOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "bake");
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void NegativeInsertTwoOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("ThereAreToDiferences", "ThereAreTwoDifferences");
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void NegativeInsertAndReplaceOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("ThereAreTooDiferences", "ThereAreTwoDifferences");
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void EmptyInputOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("", "");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void AlreadySameOneAwayTest()
+        {
+            OneAwayChecker checker = new OneAwayChecker();
+
+            bool result = checker.IsOneAway("pale", "pale");
+
+            Assert.IsTrue(result);
+        }
+
+        #endregion
     }
 }
