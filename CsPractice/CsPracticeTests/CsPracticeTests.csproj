@@ -52,6 +52,7 @@
     <Compile Include="BinarySearchTests.cs" />
     <Compile Include="BitManipulationTests.cs" />
     <Compile Include="GraphTests.cs" />
+    <Compile Include="LinkedListTests.cs" />
     <Compile Include="TestUtilities.cs" />
     <Compile Include="ProblemTests.cs" />
     <Compile Include="QuickSortTests.cs" />

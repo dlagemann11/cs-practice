@@ -2,7 +2,7 @@
 
 using CsPractice.DataStructures;
 
-namespace CsPractice.Problems
+namespace CsPractice.Problems.LinkedLists
 {
     public class KthToLastLinkedList
     {

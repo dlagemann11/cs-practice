@@ -337,5 +337,59 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region StringCompressor
+
+        [TestMethod]
+        public void BasicStringCompressorTest()
+        {
+            StringCompressor compressor = new StringCompressor();
+
+            string result = compressor.Compress("aabcccccaaa");
+
+            Assert.AreEqual("a2b1c5a3", result);
+        }
+
+        [TestMethod]
+        public void LongStringCompressorTest()
+        {
+            StringCompressor compressor = new StringCompressor();
+
+            string result = compressor.Compress("aabbbbccdddddeefgggggghijjjjjjjjjkkkllllMMMMMnnnnnnoooooooppqqqrrrrsssssttttttuvwwwwxxxxyyZZZZZZZZZZ");
+
+            Assert.AreEqual("a2b4c2d5e2f1g6h1i1j9k3l4M5n6o7p2q3r4s5t6u1v1w4x4y2Z10", result);
+        }
+
+        [TestMethod]
+        public void LastSingleStringCompressorTest()
+        {
+            StringCompressor compressor = new StringCompressor();
+
+            string result = compressor.Compress("aabcccccaaaf");
+
+            Assert.AreEqual("a2b1c5a3f1", result);
+        }
+
+        [TestMethod]
+        public void NoCompressCompressorTest()
+        {
+            StringCompressor compressor = new StringCompressor();
+
+            string result = compressor.Compress("aBcDeffggghiJkl");
+
+            Assert.AreEqual("aBcDeffggghiJkl", result);
+        }
+
+        [TestMethod]
+        public void EmptyStringCompressorTest()
+        {
+            StringCompressor compressor = new StringCompressor();
+
+            string result = compressor.Compress("");
+
+            Assert.AreEqual("", result);
+        }
+
+        #endregion
     }
 }

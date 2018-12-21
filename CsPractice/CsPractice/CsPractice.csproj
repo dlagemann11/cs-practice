@@ -68,6 +68,7 @@
     <Compile Include="DataStructures\Trees\TrieNode.cs" />
     <Compile Include="Problems\ArraysAndStrings\OneAwayChecker.cs" />
     <Compile Include="Problems\ArraysAndStrings\PalindromePermutationChecker.cs" />
+    <Compile Include="Problems\ArraysAndStrings\StringCompressor.cs" />
     <Compile Include="Problems\ArraysAndStrings\StringIsUniqueCharsSolver.cs" />
     <Compile Include="Problems\ArraysAndStrings\StringPermutationChecker.cs" />
     <Compile Include="Problems\ArraysAndStrings\URLifier.cs" />
@@ -77,7 +78,7 @@
     <Compile Include="Problems\BookSearcher.cs" />
     <Compile Include="Problems\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />
-    <Compile Include="Problems\KthToLastLinkedList.cs" />
+    <Compile Include="Problems\LinkedLists\KthToLastLinkedList.cs" />
     <Compile Include="Problems\StairHopper.cs" />
     <Compile Include="Problems\ThreeStacksFromArray.cs" />
     <Compile Include="Program.cs" />
