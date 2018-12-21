@@ -79,6 +79,7 @@
     <Compile Include="Problems\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />
     <Compile Include="Problems\LinkedLists\KthToLastLinkedList.cs" />
+    <Compile Include="Problems\LinkedLists\LinkedListDeduper.cs" />
     <Compile Include="Problems\StairHopper.cs" />
     <Compile Include="Problems\ThreeStacksFromArray.cs" />
     <Compile Include="Program.cs" />

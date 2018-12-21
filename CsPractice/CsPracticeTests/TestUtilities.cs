@@ -1,11 +1,25 @@
 ﻿using System;
 
+using CsPractice.DataStructures;
 using CsPractice.DataStructures.Graphs;
 
 namespace CsPracticeTests
 {
     public class TestUtilities
     {
+        public static SingleLinkNode<T> GenerateSinglyLinkedList<T>(T[] data) where T : IComparable
+        {
+            SingleLinkNode<T> head = new SingleLinkNode<T>(data[0]);
+            SingleLinkNode<T> thisNode = head;
+            for (int i = 1; i < data.Length; i++)
+            {
+                thisNode.Next = new SingleLinkNode<T>(data[i]);
+                thisNode = thisNode.Next;
+            }
+
+            return head;
+        }
+
         public static bool IsSorted<T>(T[] array) where T : IComparable
         {
             if (array.Length < 2)
