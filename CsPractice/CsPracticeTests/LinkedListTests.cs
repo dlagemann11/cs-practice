@@ -182,5 +182,33 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region MiddleNodeDelete
+
+        [TestMethod]
+        public void BasicMiddleNodeDeleteTest()
+        {
+            MiddleNodeDeleter deleter = new MiddleNodeDeleter();
+            SingleLinkNode<int> head = GenerateSimpleLinkedList();
+
+            deleter.Delete(head.Next.Next.Next.Next);
+
+            int[] expectedData = new int[] { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
+            Assert.IsTrue(CheckLinkedList(head, expectedData));
+        }
+
+        [TestMethod]
+        public void LastMiddleNodeDeleteTest()
+        {
+            MiddleNodeDeleter deleter = new MiddleNodeDeleter();
+            SingleLinkNode<int> head = GenerateSimpleLinkedList();
+
+            deleter.Delete(head.Next.Next.Next.Next.Next.Next.Next.Next);
+
+            int[] expectedData = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 10 };
+            Assert.IsTrue(CheckLinkedList(head, expectedData));
+        }
+
+        #endregion
     }
 }

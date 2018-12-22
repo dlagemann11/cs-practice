@@ -2,7 +2,7 @@
 {
     public class SingleLinkNode<T>
     {
-        public T Data { get; }
+        public T Data { get; set; }
         public SingleLinkNode<T> Next { get; set; }
 
         public SingleLinkNode(T data)
