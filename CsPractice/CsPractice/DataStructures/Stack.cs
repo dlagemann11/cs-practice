@@ -6,7 +6,7 @@ namespace CsPractice.DataStructures
     {
         private SingleLinkNode<T> top = null;
         
-        public void Push(T item)
+        public virtual void Push(T item)
         {
             SingleLinkNode<T> stackItem = new SingleLinkNode<T>(item);
             if (top != null)
@@ -17,7 +17,7 @@ namespace CsPractice.DataStructures
             top = stackItem;
         }
 
-        public T Pop()
+        public virtual T Pop()
         {            
             if (top == null)
             {
