@@ -63,6 +63,7 @@
     <Compile Include="TrieTests.cs" />
     <Compile Include="StairHopperTests.cs" />
     <Compile Include="ArraysAndStringsTests.cs" />
+    <Compile Include="StacksAndQueuesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
