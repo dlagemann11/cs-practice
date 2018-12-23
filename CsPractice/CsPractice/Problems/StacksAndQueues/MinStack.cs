@@ -15,17 +15,15 @@ namespace CsPractice.Problems.StacksAndQueues
             {
                 minStack.Push(item);
             }
-            else
-            {
-                minStack.Push(minStack.Peek());
-            }
         }
 
         public override T Pop()
         {
-            T popped = base.Pop();
-            minStack.Pop();
-            return popped;
+            if (Peek().CompareTo(minStack.Peek()) == 0)
+            {
+                minStack.Pop();
+            }            
+            return base.Pop();
         }
 
         public T Min()
