@@ -1,7 +1,7 @@
 ﻿
 using CsPractice.DataStructures.Trees;
 
-namespace CsPractice.Problems
+namespace CsPractice.Problems.TreesAndGraphs
 {
     public class BstFromSortedArray
     {
