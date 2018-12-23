@@ -138,5 +138,138 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region SetOfStacks
+
+        [TestMethod]
+        public void SetOfStacksTest()
+        {
+            SetOfStacks<int> stacks = new SetOfStacks<int>(3);
+            stacks.Push(1);
+            int count1 = stacks.StackCount;
+            stacks.Push(2);
+            stacks.Push(3);
+            stacks.Push(4);
+            int count2 = stacks.StackCount;
+            stacks.Push(5);
+            stacks.Push(6);
+            int count3 = stacks.StackCount;
+            stacks.Push(7);
+            stacks.Push(8);
+            int count4 = stacks.StackCount;
+
+            int result1 = stacks.Pop();
+            int result2 = stacks.Peek();
+            int result3 = stacks.Pop();
+            bool empty1 = stacks.IsEmpty();
+            int result4 = stacks.Pop();
+            int result5 = stacks.Pop();
+            int result6 = stacks.Pop();
+            int result7 = stacks.Pop();
+            int result8 = stacks.Peek();
+            stacks.Push(100);
+            int result9 = stacks.Pop();
+            int result10 = stacks.Pop();
+            int result11 = stacks.Pop();
+            bool empty2 = stacks.IsEmpty();
+
+            Assert.AreEqual(1, count1);
+            Assert.AreEqual(2, count2);
+            Assert.AreEqual(2, count3);
+            Assert.AreEqual(3, count4);
+            Assert.AreEqual(8, result1);
+            Assert.AreEqual(7, result2);
+            Assert.AreEqual(7, result3);
+            Assert.AreEqual(6, result4);
+            Assert.AreEqual(5, result5);
+            Assert.AreEqual(4, result6);
+            Assert.AreEqual(3, result7);
+            Assert.AreEqual(2, result8);
+            Assert.AreEqual(100, result9);
+            Assert.AreEqual(2, result10);
+            Assert.AreEqual(1, result11);
+            Assert.IsFalse(empty1);
+            Assert.IsTrue(empty2);
+        }
+
+        [TestMethod]
+        public void BasicPopAtSetOfStacksTest()
+        {
+            SetOfStacks<int> stacks = new SetOfStacks<int>(3);
+            stacks.Push(1);
+            stacks.Push(2);
+            stacks.Push(3);
+            stacks.Push(4);
+            stacks.Push(5);
+            stacks.Push(6);
+            stacks.Push(7);
+            stacks.Push(8);
+
+            int result1 = stacks.PopAt(1); // 1,2,3 4,5 7,8
+            int result2 = stacks.Peek();
+            int result3 = stacks.Pop(); // 1,2,3 4,5 7
+            bool empty1 = stacks.IsEmpty();
+            int result4 = stacks.Pop(); // 1,2,3 4,5
+            int result5 = stacks.Pop(); // 1,2,3 4
+            int result6 = stacks.PopAt(0); // 1,2 4
+            stacks.Push(100); // 1,2,100 4
+            int result7 = stacks.Pop(); // 1,2,100
+            int result8 = stacks.Peek();            
+            int result9 = stacks.Pop(); // 1,2
+            int result10 = stacks.Pop(); // 1
+            int result11 = stacks.Pop(); // empty
+            bool empty2 = stacks.IsEmpty();
+
+            Assert.AreEqual(6, result1);
+            Assert.AreEqual(8, result2);
+            Assert.AreEqual(8, result3);
+            Assert.AreEqual(7, result4);
+            Assert.AreEqual(5, result5);
+            Assert.AreEqual(3, result6);
+            Assert.AreEqual(4, result7);
+            Assert.AreEqual(100, result8);
+            Assert.AreEqual(100, result9);
+            Assert.AreEqual(2, result10);
+            Assert.AreEqual(1, result11);
+            Assert.IsFalse(empty1);
+            Assert.IsTrue(empty2);
+        }
+
+        [TestMethod]
+        public void EmptyEarlyPopAtSetOfStacksTest()
+        {
+            SetOfStacks<int> stacks = new SetOfStacks<int>(3);
+            stacks.Push(1);
+            stacks.Push(2);
+            stacks.Push(3);
+            stacks.Push(4);
+            stacks.Push(5);
+            stacks.Push(6);
+            stacks.Push(7);
+            stacks.Push(8);
+
+            int result1 = stacks.PopAt(1); // 1,2,3 4,5 7,8
+            int result2 = stacks.PopAt(1); // 1,2,3 4 7,8
+            int result3 = stacks.PopAt(1); // 1,2,3 empty 7,8
+            stacks.Push(100); // 1,2,3 100 7,8
+            int result4 = stacks.Pop(); // 1,2,3 100 7
+            int result5 = stacks.Pop(); // 1,2,3 100
+            int result6 = stacks.Pop(); // 1,2,3
+            int result7 = stacks.Pop(); // 1,2
+            int result8 = stacks.Pop(); // 1
+            int result9 = stacks.Pop(); // empty
+
+            Assert.AreEqual(6, result1);
+            Assert.AreEqual(5, result2);
+            Assert.AreEqual(4, result3);
+            Assert.AreEqual(8, result4);
+            Assert.AreEqual(7, result5);
+            Assert.AreEqual(100, result6);
+            Assert.AreEqual(3, result7);
+            Assert.AreEqual(2, result8);
+            Assert.AreEqual(1, result9);
+        }
+
+        #endregion
     }
 }

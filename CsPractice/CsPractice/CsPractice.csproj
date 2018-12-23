@@ -82,6 +82,7 @@
     <Compile Include="Problems\LinkedLists\LinkedListDeduper.cs" />
     <Compile Include="Problems\LinkedLists\MiddleNodeDeleter.cs" />
     <Compile Include="Problems\StacksAndQueues\MinStack.cs" />
+    <Compile Include="Problems\StacksAndQueues\SetOfStacks.cs" />
     <Compile Include="Problems\StairHopper.cs" />
     <Compile Include="Problems\StacksAndQueues\ThreeStacksFromArray.cs" />
     <Compile Include="Program.cs" />

@@ -5,6 +5,7 @@ namespace CsPractice.DataStructures
     public class Stack<T>
     {
         private SingleLinkNode<T> top = null;
+        public int Count { get; private set; }
         
         public virtual void Push(T item)
         {
@@ -15,6 +16,7 @@ namespace CsPractice.DataStructures
             }
 
             top = stackItem;
+            Count++;
         }
 
         public virtual T Pop()
@@ -35,6 +37,7 @@ namespace CsPractice.DataStructures
                 top = null;
             }
 
+            Count--;
             return item;
         }
 
