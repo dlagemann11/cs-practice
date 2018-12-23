@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using CsPractice.Problems.StacksAndQueues;
 
@@ -268,6 +269,39 @@ namespace CsPracticeTests
             Assert.AreEqual(3, result7);
             Assert.AreEqual(2, result8);
             Assert.AreEqual(1, result9);
+        }
+
+        #endregion
+
+        #region AnimalShelterQueue
+
+        [TestMethod]
+        public void BasicAnimalShelterQueueTest()
+        {
+            AnimalShelterQueue queue = new AnimalShelterQueue();
+            queue.Enqueue(0, true, "Milo");
+            queue.Enqueue(1, true, "Mollie");
+            queue.Enqueue(2, false, "Buddy");
+            queue.Enqueue(3, true, "Sylvia");
+            queue.Enqueue(4, false, "Shana");
+            queue.Enqueue(5, false, "Rover");
+            queue.Enqueue(6, true, "Tiger");
+
+            Animal animal1 = queue.DequeueAny(); // Milo
+            Animal animal2 = queue.DequeueSpecific(false); // Buddy
+            Animal animal3 = queue.DequeueSpecific(true); // Mollie
+            Animal animal4 = queue.DequeueSpecific(false); // Shana
+            Animal animal5 = queue.DequeueAny(); // Sylvia
+            Animal animal6 = queue.DequeueSpecific(true); // Tiger
+            Animal animal7 = queue.DequeueAny(); // Rover
+
+            Assert.AreEqual("Milo", animal1.Name);
+            Assert.AreEqual("Buddy", animal2.Name);
+            Assert.AreEqual("Mollie", animal3.Name);
+            Assert.AreEqual("Shana", animal4.Name);
+            Assert.AreEqual("Sylvia", animal5.Name);
+            Assert.AreEqual("Tiger", animal6.Name);
+            Assert.AreEqual("Rover", animal7.Name);
         }
 
         #endregion

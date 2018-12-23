@@ -81,6 +81,7 @@
     <Compile Include="Problems\LinkedLists\KthToLastLinkedList.cs" />
     <Compile Include="Problems\LinkedLists\LinkedListDeduper.cs" />
     <Compile Include="Problems\LinkedLists\MiddleNodeDeleter.cs" />
+    <Compile Include="Problems\StacksAndQueues\AnimalShelterQueue.cs" />
     <Compile Include="Problems\StacksAndQueues\MinStack.cs" />
     <Compile Include="Problems\StacksAndQueues\SetOfStacks.cs" />
     <Compile Include="Problems\StairHopper.cs" />
