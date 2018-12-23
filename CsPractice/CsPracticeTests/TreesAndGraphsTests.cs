@@ -48,5 +48,67 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region DepthLister
+
+        [TestMethod]
+        public void BasicDepthListerTest()
+        {
+            DepthLister depthLister = new DepthLister();
+            BinaryTree<int> tree = GenerateBinaryTree();
+
+            ArrayList<SingleLinkNode<int>> result = depthLister.BinaryTreeToLinkedLists(tree);
+
+            int[] expected = new int[] { 1 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList<int>(result[0], expected));
+
+            expected = new int[] { 3, 2 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList<int>(result[1], expected));
+
+            expected = new int[] { 7, 6, 5, 4 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList<int>(result[2], expected));
+
+            expected = new int[] { 15, 14, 13, 12, 11, 10, 9, 8 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList<int>(result[3], expected));
+
+        }
+
+        private BinaryTree<int> GenerateBinaryTree()
+        {
+            BinaryTree<int> tree = new BinaryTree<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(4);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            BinaryTreeNode<int> node8 = new BinaryTreeNode<int>(8);
+            BinaryTreeNode<int> node9 = new BinaryTreeNode<int>(9);
+            BinaryTreeNode<int> node10 = new BinaryTreeNode<int>(10);
+            BinaryTreeNode<int> node11 = new BinaryTreeNode<int>(11);
+            BinaryTreeNode<int> node12 = new BinaryTreeNode<int>(12);
+            BinaryTreeNode<int> node13 = new BinaryTreeNode<int>(13);
+            BinaryTreeNode<int> node14 = new BinaryTreeNode<int>(14);
+            BinaryTreeNode<int> node15 = new BinaryTreeNode<int>(15);
+
+            tree.Root.Left = node2;
+            tree.Root.Right = node3;
+            node2.Left = node4;
+            node2.Right = node5;
+            node3.Left = node6;
+            node3.Right = node7;
+            node4.Left = node8;
+            node4.Right = node9;
+            node5.Left = node10;
+            node5.Right = node11;
+            node6.Left = node12;
+            node6.Right = node13;
+            node7.Left = node14;
+            node7.Right = node15;
+
+            return tree;
+        }
+
+        #endregion
     }
 }

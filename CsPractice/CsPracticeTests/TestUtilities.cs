@@ -20,6 +20,20 @@ namespace CsPracticeTests
             return head;
         }
 
+        public static bool CheckSinglyLinkedList<T>(SingleLinkNode<T> head, T[] data) where T : IEquatable<T>
+        {
+            SingleLinkNode<T> node = head;
+            foreach (T item in data)
+            {
+                if (node == null || !item.Equals(node.Data))
+                {
+                    return false;
+                }
+                node = node.Next;
+            }
+            return true;
+        }
+
         public static bool IsSorted<T>(T[] array) where T : IComparable
         {
             if (array.Length < 2)
