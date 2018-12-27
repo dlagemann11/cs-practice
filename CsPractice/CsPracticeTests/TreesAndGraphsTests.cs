@@ -111,6 +111,56 @@ namespace CsPracticeTests
 
         #endregion
 
+        #region TreeBalanceDetector
 
+        [TestMethod]
+        public void BasicTreeBalanceDetectorTest()
+        {
+            TreeBalanceDetector<int> detector = new TreeBalanceDetector<int>();
+            BinaryTree<int> tree = new BinaryTree<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(4);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            tree.Root.Left = node2;
+            tree.Root.Right = node3;
+            node2.Left = node4;
+            node2.Right = node5;
+            node3.Right = node7;
+            node4.Left = node6;
+
+            bool result = detector.IsBalanced(tree);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void UnbalancedTreeBalanceDetectorTest()
+        {
+            TreeBalanceDetector<int> detector = new TreeBalanceDetector<int>();
+            BinaryTree<int> tree = new BinaryTree<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(4);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            BinaryTreeNode<int> node8 = new BinaryTreeNode<int>(8);
+            tree.Root.Left = node2;
+            tree.Root.Right = node3;
+            node2.Left = node4;
+            node2.Right = node5;
+            node3.Right = node7;
+            node4.Left = node6;
+            node7.Left = node8;
+
+            bool result = detector.IsBalanced(tree);
+
+            Assert.IsFalse(result);
+        }
+
+        #endregion
     }
 }

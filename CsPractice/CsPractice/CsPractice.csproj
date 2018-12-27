@@ -89,6 +89,7 @@
     <Compile Include="Problems\StairHopper.cs" />
     <Compile Include="Problems\StacksAndQueues\ThreeStacksFromArray.cs" />
     <Compile Include="Problems\TreesAndGraphs\DepthLister.cs" />
+    <Compile Include="Problems\TreesAndGraphs\TreeBalanceDetector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
