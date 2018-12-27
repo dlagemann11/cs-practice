@@ -22,7 +22,7 @@ namespace CsPracticeTests
             deduper.DeDupeFast(head);
 
             int[] expectedData = new int[] { 1, 5, 3, 9, 10, 1001, 11 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace CsPracticeTests
             deduper.DeDupeSlim(head);
 
             int[] expectedData = new int[] { 1, 5, 3, 9, 10, 1001, 11 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace CsPracticeTests
             deduper.DeDupeFast(head);
 
             int[] expectedData = new int[] { 5 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace CsPracticeTests
             deduper.DeDupeSlim(head);
 
             int[] expectedData = new int[] { 5 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace CsPracticeTests
             deduper.DeDupeFast(head);
 
             int[] expectedData = new int[] { 1, 5, 3, 9, 10, 1001, 11 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -92,21 +92,7 @@ namespace CsPracticeTests
             deduper.DeDupeSlim(head);
 
             int[] expectedData = new int[] { 1, 5, 3, 9, 10, 1001, 11 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
-        }
-
-        private bool CheckLinkedList<T>(SingleLinkNode<T> head, T[] expectedData) where T : IComparable
-        {
-            SingleLinkNode<T> thisNode = head;
-            for (int i = 0; i < expectedData.Length; i++)
-            {
-                if (thisNode.Data.CompareTo(expectedData[i]) != 0)
-                {
-                    return false;
-                }
-                thisNode = thisNode.Next;
-            }
-            return true;
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         #endregion
@@ -175,12 +161,6 @@ namespace CsPracticeTests
             Assert.ThrowsException<ArgumentException>(() => problem.KthToLast(11, head));
         }
 
-        private SingleLinkNode<int> GenerateSimpleLinkedList()
-        {
-            int[] data = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            return TestUtilities.GenerateSinglyLinkedList(data);
-        }
-
         #endregion
 
         #region MiddleNodeDelete
@@ -194,7 +174,7 @@ namespace CsPracticeTests
             deleter.Delete(head.Next.Next.Next.Next);
 
             int[] expectedData = new int[] { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         [TestMethod]
@@ -206,9 +186,48 @@ namespace CsPracticeTests
             deleter.Delete(head.Next.Next.Next.Next.Next.Next.Next.Next);
 
             int[] expectedData = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 10 };
-            Assert.IsTrue(CheckLinkedList(head, expectedData));
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(head, expectedData));
         }
 
         #endregion
+
+        #region Reverser
+
+        [TestMethod]
+        public void BasicLinkedListReverserTest()
+        {
+            LinkedListReverser reverser = new LinkedListReverser();
+
+            SingleLinkNode<int> result = reverser.Reverse(GenerateSimpleLinkedList());
+
+            int[] expected = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(result, expected));
+        }
+
+        [TestMethod]
+        public void OneMemberLinkedListReverserTest()
+        {
+            LinkedListReverser reverser = new LinkedListReverser();
+
+            SingleLinkNode<int> input = new SingleLinkNode<int>(5);
+            SingleLinkNode<int> result = reverser.Reverse(input);
+
+            int[] expected = new int[] { 5 };
+            Assert.IsTrue(TestUtilities.CheckSinglyLinkedList(result, expected));
+        }
+
+        #endregion
+
+        #region LoopDetector
+
+
+
+        #endregion
+
+        private SingleLinkNode<int> GenerateSimpleLinkedList()
+        {
+            int[] data = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            return TestUtilities.GenerateSinglyLinkedList(data);
+        }
     }
 }
