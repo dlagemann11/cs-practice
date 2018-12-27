@@ -220,7 +220,32 @@ namespace CsPracticeTests
 
         #region LoopDetector
 
+        [TestMethod]
+        public void BasicLoopDetectorTest()
+        {
+            LoopDetector detector = new LoopDetector();
+            SingleLinkNode<char> head = new SingleLinkNode<char>('A');
+            head.Next = new SingleLinkNode<char>('B');
+            head.Next.Next = new SingleLinkNode<char>('C');
+            SingleLinkNode<char> loopStart = head.Next.Next;
+            loopStart.Next = new SingleLinkNode<char>('D');
+            loopStart.Next.Next = new SingleLinkNode<char>('E');
+            loopStart.Next.Next.Next = loopStart;
 
+            SingleLinkNode<char> result = detector.DetectLoop(head);
+
+            Assert.AreSame(loopStart, result);
+        }
+
+        [TestMethod]
+        public void NoResultLoopDetectorTest()
+        {
+            LoopDetector detector = new LoopDetector();
+
+            SingleLinkNode<int> result = detector.DetectLoop(GenerateSimpleLinkedList());
+
+            Assert.IsNull(result);
+        }
 
         #endregion
 

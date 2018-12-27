@@ -77,6 +77,7 @@
     <Compile Include="Problems\BitManipulation\NextAndPreviousWithSameOnes.cs" />
     <Compile Include="Problems\BookSearcher.cs" />
     <Compile Include="Problems\LinkedLists\LinkedListReverser.cs" />
+    <Compile Include="Problems\LinkedLists\LoopDetector.cs" />
     <Compile Include="Problems\TreesAndGraphs\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />
     <Compile Include="Problems\LinkedLists\KthToLastLinkedList.cs" />
