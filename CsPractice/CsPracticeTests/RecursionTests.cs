@@ -151,5 +151,83 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region RobotGridPathfinder
+
+        [TestMethod]
+        public void BasicRobotGridPathfinderTest()
+        {
+            RobotGridPathfinder pathfinder = new RobotGridPathfinder();
+            bool[,] grid = GenerateGrid();
+
+            bool[,] result = pathfinder.FindPath(grid);
+
+            Assert.IsTrue(result[0, 0]);
+            Assert.IsTrue(result[0, 1]);
+            Assert.IsTrue(result[0, 2]);
+            Assert.IsTrue(result[1, 2]);
+            Assert.IsTrue(result[1, 3]);
+            Assert.IsTrue(result[2, 3]);
+            Assert.IsTrue(result[3, 3]);
+            Assert.IsTrue(result[4, 3]);
+            Assert.IsTrue(result[4, 4]);
+
+            Assert.IsFalse(result[0, 3]);
+            Assert.IsFalse(result[0, 4]);
+            Assert.IsFalse(result[1, 0]);
+            Assert.IsFalse(result[1, 1]);
+            Assert.IsFalse(result[1, 4]);
+            Assert.IsFalse(result[2, 0]);
+            Assert.IsFalse(result[2, 1]);
+            Assert.IsFalse(result[2, 2]);
+            Assert.IsFalse(result[2, 4]);
+            Assert.IsFalse(result[3, 0]);
+            Assert.IsFalse(result[3, 1]);
+            Assert.IsFalse(result[3, 2]);
+            Assert.IsFalse(result[3, 4]);
+            Assert.IsFalse(result[4, 0]);
+            Assert.IsFalse(result[4, 1]);
+            Assert.IsFalse(result[4, 2]);
+        }
+
+        [TestMethod]
+        public void NoPathRobotGridPathfinderTest()
+        {
+            RobotGridPathfinder pathfinder = new RobotGridPathfinder();
+            bool[,] grid = GenerateGrid();
+            grid[1, 2] = false;
+
+            bool[,] result = pathfinder.FindPath(grid);
+
+            Assert.IsNull(result);
+        }
+
+        private bool[,] GenerateGrid()
+        {
+            bool[,] grid = new bool[5, 5];
+            grid[0, 0] = true;
+            grid[0, 1] = true;
+            grid[0, 2] = true;
+            grid[0, 4] = true;
+            grid[1, 2] = true;
+            grid[1, 3] = true;
+            grid[1, 4] = true;
+            grid[2, 0] = true;
+            grid[2, 1] = true;
+            grid[2, 3] = true;
+            grid[2, 4] = true;
+            grid[3, 0] = true;
+            grid[3, 1] = true;
+            grid[3, 3] = true;
+            grid[4, 0] = true;
+            grid[4, 1] = true;
+            grid[4, 2] = true;
+            grid[4, 3] = true;
+            grid[4, 4] = true;
+
+            return grid;
+        }
+
+        #endregion
     }
 }
