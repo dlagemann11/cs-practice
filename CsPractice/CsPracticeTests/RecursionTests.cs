@@ -1,12 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using CsPractice.Problems;
+using CsPractice.Problems.Recursion;
 
 namespace CsPracticeTests
 {
     [TestClass]
-    public class StairHopperTests
+    public class RecursionTests
     {
+        #region StairHopper
+
         [TestMethod]
         public void BottomUpOneStairNaive()
         {
@@ -146,5 +149,7 @@ namespace CsPracticeTests
 
             Assert.AreEqual(53798080, result);
         }
+
+        #endregion
     }
 }

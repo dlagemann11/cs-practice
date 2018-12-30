@@ -87,7 +87,7 @@
     <Compile Include="Problems\StacksAndQueues\AnimalShelterQueue.cs" />
     <Compile Include="Problems\StacksAndQueues\MinStack.cs" />
     <Compile Include="Problems\StacksAndQueues\SetOfStacks.cs" />
-    <Compile Include="Problems\StairHopper.cs" />
+    <Compile Include="Problems\Recursion\StairHopper.cs" />
     <Compile Include="Problems\StacksAndQueues\ThreeStacksFromArray.cs" />
     <Compile Include="Problems\TreesAndGraphs\DepthLister.cs" />
     <Compile Include="Problems\TreesAndGraphs\TreeBalanceDetector.cs" />

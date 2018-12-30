@@ -53,6 +53,7 @@
     <Compile Include="BitManipulationTests.cs" />
     <Compile Include="GraphTests.cs" />
     <Compile Include="LinkedListTests.cs" />
+    <Compile Include="RecursionTests.cs" />
     <Compile Include="TestUtilities.cs" />
     <Compile Include="ProblemTests.cs" />
     <Compile Include="QuickSortTests.cs" />
@@ -61,7 +62,6 @@
     <Compile Include="TreeTests.cs" />
     <Compile Include="MergeSortTests.cs" />
     <Compile Include="TrieTests.cs" />
-    <Compile Include="StairHopperTests.cs" />
     <Compile Include="ArraysAndStringsTests.cs" />
     <Compile Include="StacksAndQueuesTests.cs" />
     <Compile Include="TreesAndGraphsTests.cs" />

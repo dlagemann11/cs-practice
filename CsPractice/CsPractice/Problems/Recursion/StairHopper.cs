@@ -1,4 +1,4 @@
-﻿namespace CsPractice.Problems
+﻿namespace CsPractice.Problems.Recursion
 {
     public class StairHopper
     {
