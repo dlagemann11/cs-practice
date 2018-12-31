@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using CsPractice.Problems.Recursion;
@@ -297,6 +298,30 @@ namespace CsPracticeTests
 
             Assert.AreEqual(-1, result);
         }
+
+        #endregion
+
+        #region PowerSetFinder
+
+        [TestMethod]
+        public void BasicPowerSetFinderTest()
+        {
+            PowerSetFinder<int> finder = new PowerSetFinder<int>();
+            int[] set = new int[] { 1, 2, 3 };
+
+            List<int[]> result = finder.GetSubsets(set);
+
+            Assert.IsTrue(result[0].SequenceEqual(new int[0]));
+            Assert.IsTrue(result[1].SequenceEqual(new int[] { 1 }));
+            Assert.IsTrue(result[2].SequenceEqual(new int[] { 2 }));
+            Assert.IsTrue(result[3].SequenceEqual(new int[] { 1, 2 }));
+            Assert.IsTrue(result[4].SequenceEqual(new int[] { 3 }));
+            Assert.IsTrue(result[5].SequenceEqual(new int[] { 1, 3 }));
+            Assert.IsTrue(result[6].SequenceEqual(new int[] { 2, 3 }));
+            Assert.IsTrue(result[7].SequenceEqual(new int[] { 1, 2, 3 }));
+        }
+
+        
 
         #endregion
     }
