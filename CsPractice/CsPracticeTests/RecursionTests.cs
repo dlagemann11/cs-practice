@@ -229,5 +229,75 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region MagicIndexFinder
+
+        [TestMethod]
+        public void BasicMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { -3, -1, 1, 3, 5, 7, 9, 11 };
+
+            int result = finder.FindMagicIndex(A);
+
+            Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        public void LeftmostMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { 0, 2, 4, 5, 6, 7, 8, 9 };
+
+            int result = finder.FindMagicIndex(A);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void RightmostMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { -3, -1, 0, 1, 2, 4, 5, 7 };
+
+            int result = finder.FindMagicIndex(A);
+
+            Assert.AreEqual(7, result);
+        }
+
+        [TestMethod]
+        public void NotFoundMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { -3, -1, 1, 4, 5, 7, 9, 11 };
+
+            int result = finder.FindMagicIndex(A);
+
+            Assert.AreEqual(-1, result);
+        }
+
+        [TestMethod]
+        public void BasicNonDistinctMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { 1, 3, 4, 5, 5, 5, 7, 8 };
+
+            int result = finder.FindNonDistinctMagicIndex(A);
+
+            Assert.AreEqual(5, result);
+        }
+
+        [TestMethod]
+        public void NotFoundNonDistinctMagicIndexFinderTest()
+        {
+            MagicIndexFinder finder = new MagicIndexFinder();
+            int[] A = new int[] { 1, 3, 4, 5, 6, 8, 8, 9 };
+
+            int result = finder.FindNonDistinctMagicIndex(A);
+
+            Assert.AreEqual(-1, result);
+        }
+
+        #endregion
     }
 }
