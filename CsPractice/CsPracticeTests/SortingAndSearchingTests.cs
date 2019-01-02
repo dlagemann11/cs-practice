@@ -80,5 +80,37 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region AnagramSorter
+
+        [TestMethod]
+        public void BasicAnagramSortTest()
+        {
+            AnagramSorter sorter = new AnagramSorter();
+            string[] array = new string[]
+            {
+                "iceman",
+                "cattaco",
+                "cinema",
+                "blue",
+                "eel",
+                "tacocat",
+                "lee",
+                "manice"
+            };
+
+            sorter.AnagramSort(array);
+
+            Assert.AreEqual("iceman", array[0]);
+            Assert.AreEqual("cinema", array[1]);
+            Assert.AreEqual("manice", array[2]);
+            Assert.AreEqual("blue", array[3]);
+            Assert.AreEqual("eel", array[4]);
+            Assert.AreEqual("lee", array[5]);
+            Assert.AreEqual("tacocat", array[6]);
+            Assert.AreEqual("cattaco", array[7]);
+        }
+
+        #endregion
     }
 }
