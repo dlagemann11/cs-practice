@@ -54,6 +54,7 @@
     <Compile Include="GraphTests.cs" />
     <Compile Include="LinkedListTests.cs" />
     <Compile Include="RecursionTests.cs" />
+    <Compile Include="SortingAndSearchingTests.cs" />
     <Compile Include="TestUtilities.cs" />
     <Compile Include="ProblemTests.cs" />
     <Compile Include="QuickSortTests.cs" />
