@@ -112,5 +112,108 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region RotatedArraySearcher
+
+        [TestMethod]
+        public void LeftOverInflectionRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 15, 16, 19, 20, 25, 1, 3, 4, 5, 6, 10, 14 };
+
+            int result = searcher.Search(array, 16);
+
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void NormalRightRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 15, 16, 19, 20, 25, 1, 3, 4, 5, 6, 10, 14 };
+
+            int result = searcher.Search(array, 10);
+
+            Assert.AreEqual(10, result);
+        }
+
+        [TestMethod]
+        public void RightOverInflectionRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 6, 10, 14, 15, 16, 19, 20, 25, 1, 3, 4, 5 };
+
+            int result = searcher.Search(array, 5);
+
+            Assert.AreEqual(11, result);
+        }
+
+        [TestMethod]
+        public void NormalLeftRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 6, 10, 14, 15, 16, 19, 20, 25, 1, 3, 4, 5 };
+
+            int result = searcher.Search(array, 6);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void LeftRepeatsLeftSearchRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 10, 1, 1, 2, 3, 5, 7, 9 };
+
+            int result = searcher.Search(array, 1);
+
+            Assert.IsTrue(result == 1 || result == 2);
+        }
+
+        [TestMethod]
+        public void LeftRepeatsRightSearchRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 10, 10, 10, 10, 3, 5, 7, 9 };
+
+            int result = searcher.Search(array, 3);
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        public void RightRepeatsRightSearchRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 10, 1, 2, 3, 3, 3, 3, 4 };
+
+            int result = searcher.Search(array, 4);
+
+            Assert.AreEqual(7, result);
+        }
+
+        [TestMethod]
+        public void RightRepeatsLeftSearchRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 10, 1, 2, 3, 3, 3, 3, 3 };
+
+            int result = searcher.Search(array, 1);
+
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void RepeatsAroundRotatedArraySearcherTest()
+        {
+            RotatedArraySearcher searcher = new RotatedArraySearcher();
+            int[] array = { 3, 5, 7, 1, 3, 3, 3, 3, 3 };
+
+            int result = searcher.Search(array, 1);
+
+            Assert.AreEqual(3, result);
+        }
+
+        #endregion
     }
 }

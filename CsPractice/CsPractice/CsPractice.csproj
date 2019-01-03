@@ -83,6 +83,7 @@
     <Compile Include="Problems\Recursion\PowerSetFinder.cs" />
     <Compile Include="Problems\Recursion\RobotGridPathfinder.cs" />
     <Compile Include="Problems\SortingAndSearching\AnagramSorter.cs" />
+    <Compile Include="Problems\SortingAndSearching\RotatedArraySearcher.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayMerger.cs" />
     <Compile Include="Problems\TreesAndGraphs\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />
