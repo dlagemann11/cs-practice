@@ -215,5 +215,31 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region SortedArrayNoSizeSearcher
+
+        [TestMethod]
+        public void BasicNoSizeSearcherTest()
+        {
+            SortedArrayNoSizeSearcher searcher = new SortedArrayNoSizeSearcher();
+            int[] array = { 1, 2, 4, 5, 7, 8, 9, 11, 15, 17, -1, -1, -1, -1, -1, -1, -1 };
+
+            int result = searcher.Search(array, 2);
+
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void FarRightNoSizeSearcherTest()
+        {
+            SortedArrayNoSizeSearcher searcher = new SortedArrayNoSizeSearcher();
+            int[] array = { 1, 2, 4, 5, 7, 8, 9, 11, 15, 17, -1, -1, -1, -1, -1, -1, -1 };
+
+            int result = searcher.Search(array, 17);
+
+            Assert.AreEqual(9, result);
+        }
+
+        #endregion
     }
 }
