@@ -75,7 +75,7 @@
     <Compile Include="Problems\BitManipulation\BitFlipWinner.cs" />
     <Compile Include="Problems\BitManipulation\BitInserter.cs" />
     <Compile Include="Problems\BitManipulation\NextAndPreviousWithSameOnes.cs" />
-    <Compile Include="Problems\BookSearcher.cs" />
+    <Compile Include="Problems\Medium\BookSearcher.cs" />
     <Compile Include="Problems\LinkedLists\LinkedListReverser.cs" />
     <Compile Include="Problems\LinkedLists\LoopDetector.cs" />
     <Compile Include="Problems\OODesign\CallCenterProblem.cs" />
@@ -112,6 +112,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Problems\ThreadsAndLocks\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

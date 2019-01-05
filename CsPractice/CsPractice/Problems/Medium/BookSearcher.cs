@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CsPractice.Problems
+namespace CsPractice.Problems.Medium
 {
     public class BookSearcher
     {

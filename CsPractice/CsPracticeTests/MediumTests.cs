@@ -2,14 +2,12 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using CsPractice.DataStructures;
-using CsPractice.DataStructures.Trees;
-using CsPractice.Problems;
+using CsPractice.Problems.Medium;
 
 namespace CsPracticeTests
 {
     [TestClass]
-    public class ProblemTests
+    public class MediumTests
     {
         #region BookSearcher
 
@@ -81,6 +79,6 @@ namespace CsPracticeTests
             return book;
         }
 
-        #endregion        
+        #endregion
     }
 }
