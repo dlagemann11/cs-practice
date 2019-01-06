@@ -22,17 +22,17 @@ namespace CsPractice.Problems.ThreadsAndLocks
 
         public bool StartSimulation(int numTimesToEat)
         {
-            Task<bool>[] philosophers = new Task<bool>[numberPhilosophers];
-            for (int i = 0; i < numberPhilosophers; i++)
-            {
-                int thisPhilosopher = i;
-                philosophers[i] = new Task<bool>(() => Eat(thisPhilosopher));
-            }
-
             bool overallResult = true;
 
             for (int i = 0; i < numTimesToEat; i++)
             {
+                Task<bool>[] philosophers = new Task<bool>[numberPhilosophers];
+                for (int j = 0; j < numberPhilosophers; j++)
+                {
+                    int thisPhilosopher = j;
+                    philosophers[j] = new Task<bool>(() => Eat(thisPhilosopher));
+                }            
+
                 for (int j = 0; j < numberPhilosophers; j++)
                 {
                     philosophers[j].Start();

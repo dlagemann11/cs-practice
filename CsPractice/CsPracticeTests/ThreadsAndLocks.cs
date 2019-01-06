@@ -40,6 +40,16 @@ namespace CsPracticeTests
             Assert.IsTrue(result);
         }
 
+        [TestMethod]
+        public void HungryDiningPhilosophersTest()
+        {
+            DiningPhilosophersSimulation simulation = new DiningPhilosophersSimulation(10, 1);
+
+            bool result = simulation.StartSimulation(5);
+
+            Assert.IsTrue(result);
+        }
+
         #endregion
 
         #region InOrderCaller
