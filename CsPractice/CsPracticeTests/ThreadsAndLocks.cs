@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using CsPractice.Problems.ThreadsAndLocks;
@@ -38,6 +38,25 @@ namespace CsPracticeTests
             bool result = simulation.StartSimulation(1);
 
             Assert.IsTrue(result);
+        }
+
+        #endregion
+
+        #region InOrderCaller
+
+        [TestMethod]
+        public void BasicInOrderCallerTest()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                InOrderCaller caller = new InOrderCaller();
+
+                List<string> result = caller.RunTest();
+
+                Assert.AreEqual("First", result[0]);
+                Assert.AreEqual("Second", result[1]);
+                Assert.AreEqual("Third", result[2]);
+            }
         }
 
         #endregion

@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using CsPractice.DataStructures;
 
 namespace CsPractice.Problems.StacksAndQueues
