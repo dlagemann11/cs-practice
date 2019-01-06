@@ -88,6 +88,7 @@
     <Compile Include="Problems\SortingAndSearching\SortedArrayNoSizeSearcher.cs" />
     <Compile Include="Problems\ThreadsAndLocks\DiningPhilosophersSimulation.cs" />
     <Compile Include="Problems\ThreadsAndLocks\InOrderCaller.cs" />
+    <Compile Include="Problems\ThreadsAndLocks\MultiThreadedFizzBuzz.cs" />
     <Compile Include="Problems\TreesAndGraphs\BstFromSortedArray.cs" />
     <Compile Include="Problems\BitManipulation\DecimalToBinaryStringConverter.cs" />
     <Compile Include="Problems\LinkedLists\KthToLastLinkedList.cs" />
