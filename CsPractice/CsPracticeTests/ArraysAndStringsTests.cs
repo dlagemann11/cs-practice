@@ -391,5 +391,77 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region MatrixRotater
+
+        [TestMethod]
+        public void BasicMatrixRotaterTest()
+        {
+            MatrixRotater rotater = new MatrixRotater();
+            int[,] matrix = GenerateSquareMatrix(4);
+
+            int[,] result = rotater.Rotate(matrix);
+
+            Assert.AreEqual(12, result[0, 0]);
+            Assert.AreEqual(8, result[0, 1]);
+            Assert.AreEqual(4, result[0, 2]);
+            Assert.AreEqual(0, result[0, 3]);
+            Assert.AreEqual(13, result[1, 0]);
+            Assert.AreEqual(9, result[1, 1]);
+            Assert.AreEqual(5, result[1, 2]);
+            Assert.AreEqual(1, result[1, 3]);
+            Assert.AreEqual(14, result[2, 0]);
+            Assert.AreEqual(10, result[2, 1]);
+            Assert.AreEqual(6, result[2, 2]);
+            Assert.AreEqual(2, result[2, 3]);
+            Assert.AreEqual(15, result[3, 0]);
+            Assert.AreEqual(11, result[3, 1]);
+            Assert.AreEqual(7, result[3, 2]);
+            Assert.AreEqual(3, result[3, 3]);
+        }
+
+        [TestMethod]
+        public void BasicInPlaceMatrixRotaterTest()
+        {
+            MatrixRotater rotater = new MatrixRotater();
+            int[,] matrix = GenerateSquareMatrix(4);
+
+            rotater.RotateInPlace(matrix);
+
+            Assert.AreEqual(12, matrix[0, 0]);
+            Assert.AreEqual(8, matrix[0, 1]);
+            Assert.AreEqual(4, matrix[0, 2]);
+            Assert.AreEqual(0, matrix[0, 3]);
+            Assert.AreEqual(13, matrix[1, 0]);
+            Assert.AreEqual(9, matrix[1, 1]);
+            Assert.AreEqual(5, matrix[1, 2]);
+            Assert.AreEqual(1, matrix[1, 3]);
+            Assert.AreEqual(14, matrix[2, 0]);
+            Assert.AreEqual(10, matrix[2, 1]);
+            Assert.AreEqual(6, matrix[2, 2]);
+            Assert.AreEqual(2, matrix[2, 3]);
+            Assert.AreEqual(15, matrix[3, 0]);
+            Assert.AreEqual(11, matrix[3, 1]);
+            Assert.AreEqual(7, matrix[3, 2]);
+            Assert.AreEqual(3, matrix[3, 3]);
+        }
+
+        private int[,] GenerateSquareMatrix(int size)
+        {
+            int[,] matrix = new int[size, size];
+            int n = 0;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    matrix[i, j] = n;
+                    n++;
+                }
+            }
+
+            return matrix;
+        }
+
+        #endregion
     }
 }
