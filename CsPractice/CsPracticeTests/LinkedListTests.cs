@@ -249,6 +249,36 @@ namespace CsPracticeTests
 
         #endregion
 
+        #region PalindromeChecker
+
+        [TestMethod]
+        public void BasicPalindromeCheckerTest()
+        {
+            LinkedListPalindromeChecker checker = new LinkedListPalindromeChecker();
+            SingleLinkNode<char> head = new SingleLinkNode<char>('A');
+            head.Next = new SingleLinkNode<char>('B');
+            head.Next.Next = new SingleLinkNode<char>('C');
+            head.Next.Next.Next = new SingleLinkNode<char>('B');
+            head.Next.Next.Next.Next = new SingleLinkNode<char>('A');
+
+            bool result = checker.Check(head);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void NegativePalindromeCheckerTest()
+        {
+            LinkedListPalindromeChecker checker = new LinkedListPalindromeChecker();
+            SingleLinkNode<int> head = GenerateSimpleLinkedList();
+
+            bool result = checker.Check(head);
+
+            Assert.IsFalse(result);
+        }
+
+        #endregion
+
         private SingleLinkNode<int> GenerateSimpleLinkedList()
         {
             int[] data = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };

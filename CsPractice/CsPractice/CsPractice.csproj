@@ -76,6 +76,7 @@
     <Compile Include="Problems\BitManipulation\BitFlipWinner.cs" />
     <Compile Include="Problems\BitManipulation\BitInserter.cs" />
     <Compile Include="Problems\BitManipulation\NextAndPreviousWithSameOnes.cs" />
+    <Compile Include="Problems\LinkedLists\LinkedListPalindromeChecker.cs" />
     <Compile Include="Problems\Medium\BookSearcher.cs" />
     <Compile Include="Problems\LinkedLists\LinkedListReverser.cs" />
     <Compile Include="Problems\LinkedLists\LoopDetector.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Problems\SortingAndSearching\RotatedArraySearcher.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayMerger.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayNoSizeSearcher.cs" />
+    <Compile Include="Problems\StacksAndQueues\QueueFromStacks.cs" />
     <Compile Include="Problems\ThreadsAndLocks\DiningPhilosophersSimulation.cs" />
     <Compile Include="Problems\ThreadsAndLocks\InOrderCaller.cs" />
     <Compile Include="Problems\ThreadsAndLocks\MultiThreadedFizzBuzz.cs" />

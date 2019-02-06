@@ -304,5 +304,37 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region QueueFromStacks
+
+        [TestMethod]
+        public void BasicQueueFromStacksTest()
+        {
+            QueueFromStacks queue = new QueueFromStacks();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+
+            int result1 = queue.Dequeue();
+            int result2 = queue.Dequeue();
+            int result3 = queue.Peek();
+            queue.Enqueue(6);
+            int result3a = queue.Dequeue();
+            int result4 = queue.Dequeue();
+            int result5 = queue.Dequeue();
+            int result6 = queue.Dequeue();
+
+            Assert.AreEqual(1, result1);
+            Assert.AreEqual(2, result2);
+            Assert.AreEqual(3, result3);
+            Assert.AreEqual(3, result3a);
+            Assert.AreEqual(4, result4);
+            Assert.AreEqual(5, result5);
+            Assert.AreEqual(6, result6);
+        }
+
+        #endregion
     }
 }
