@@ -161,5 +161,55 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region BstValidater
+
+        [TestMethod]
+        public void BasicBstValidaterTest()
+        {
+            BstValidater validater = new BstValidater();
+            BinaryTree<int> tree = new BinaryTree<int>(4);
+            BinaryTreeNode<int> node1 = new BinaryTreeNode<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            tree.Root.Left = node2;
+            tree.Root.Right = node6;
+            node2.Left = node1;
+            node2.Right = node3;
+            node6.Right = node7;
+            node6.Left = node5;
+
+            bool result = validater.Validate(tree.Root);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void NegativeBstValidaterTest()
+        {
+            BstValidater validater = new BstValidater();
+            BinaryTree<int> tree = new BinaryTree<int>(4);
+            BinaryTreeNode<int> node1 = new BinaryTreeNode<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(0);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            tree.Root.Left = node2;
+            tree.Root.Right = node6;
+            node2.Left = node1;
+            node2.Right = node3;
+            node6.Right = node7;
+            node6.Left = node5;
+
+            bool result = validater.Validate(tree.Root);
+
+            Assert.IsFalse(result);
+        }
+
+        #endregion
     }
 }
