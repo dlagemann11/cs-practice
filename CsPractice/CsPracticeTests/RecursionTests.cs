@@ -321,7 +321,31 @@ namespace CsPracticeTests
             Assert.IsTrue(result[7].SequenceEqual(new int[] { 1, 2, 3 }));
         }
 
-        
+
+
+        #endregion
+
+        #region RecursiveMultiplier
+
+        [TestMethod]
+        public void BasicRecursiveMultiplierTest()
+        {
+            RecursiveMultiplier multiplier = new RecursiveMultiplier();
+
+            int result = multiplier.Multiply(9, 7);
+
+            Assert.AreEqual(63, result);
+        }
+
+        [TestMethod]
+        public void LargeRecursiveMultiplierTest()
+        {
+            RecursiveMultiplier multiplier = new RecursiveMultiplier();
+
+            int result = multiplier.Multiply(101, 259);
+
+            Assert.AreEqual(26159, result);
+        }
 
         #endregion
     }
