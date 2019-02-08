@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace CsPractice.Problems
+namespace CsPractice.Problems.BitManipulation
 {
     public class DecimalToBinaryStringConverter
     {

@@ -1,4 +1,4 @@
-﻿namespace CsPractice.Problems
+﻿namespace CsPractice.Problems.BitManipulation
 {
     public class BitInserter
     {

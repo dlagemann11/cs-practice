@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using CsPractice.Algorithms;
-using CsPractice.Problems;
+using CsPractice.Problems.BitManipulation;
 
 namespace CsPracticeTests
 {
@@ -278,6 +278,30 @@ namespace CsPracticeTests
 
             Assert.AreEqual(-1, result[0]);
             Assert.AreEqual(-1, result[1]);
+        }
+
+        #endregion
+
+        #region BitConvertCounter
+
+        [TestMethod]
+        public void BasicBitConvertCounterTest()
+        {
+            BitConvertCounter counter = new BitConvertCounter();
+
+            int result = counter.Count(29, 15);
+
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void AnotherBitConvertCounterTest()
+        {
+            BitConvertCounter counter = new BitConvertCounter();
+
+            int result = counter.Count(0, 15);
+
+            Assert.AreEqual(4, result);
         }
 
         #endregion
