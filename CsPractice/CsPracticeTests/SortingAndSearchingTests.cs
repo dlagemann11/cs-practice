@@ -240,5 +240,53 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region SparseSearcher
+
+        [TestMethod]
+        public void FirstSparseSearcherTest()
+        {
+            SparseSearcher searcher = new SparseSearcher();
+            string[] array = new string[] { "at", "", "", "", "ball", "", "", "cat", "", "", "dad", "", "" };
+
+            int result = searcher.Search(array, "at");
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void LastSparseSearcherTest()
+        {
+            SparseSearcher searcher = new SparseSearcher();
+            string[] array = new string[] { "at", "", "", "", "ball", "", "", "cat", "", "", "", "", "dad" };
+
+            int result = searcher.Search(array, "dad");
+
+            Assert.AreEqual(12, result);
+        }
+
+        [TestMethod]
+        public void MiddleLeftSparseSearcherTest()
+        {
+            SparseSearcher searcher = new SparseSearcher();
+            string[] array = new string[] { "at", "", "", "", "ball", "", "", "cat", "", "", "dad", "", "" };
+
+            int result = searcher.Search(array, "ball");
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        public void MiddleRightSparseSearcherTest()
+        {
+            SparseSearcher searcher = new SparseSearcher();
+            string[] array = new string[] { "at", "", "", "", "ball", "", "", "cat", "", "", "dad", "", "" };
+
+            int result = searcher.Search(array, "cat");
+
+            Assert.AreEqual(7, result);
+        }
+
+        #endregion
     }
 }

@@ -90,6 +90,7 @@
     <Compile Include="Problems\SortingAndSearching\RotatedArraySearcher.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayMerger.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayNoSizeSearcher.cs" />
+    <Compile Include="Problems\SortingAndSearching\SparseSearcher.cs" />
     <Compile Include="Problems\StacksAndQueues\QueueFromStacks.cs" />
     <Compile Include="Problems\ThreadsAndLocks\DiningPhilosophersSimulation.cs" />
     <Compile Include="Problems\ThreadsAndLocks\InOrderCaller.cs" />
