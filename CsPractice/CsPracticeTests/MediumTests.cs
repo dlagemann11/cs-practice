@@ -80,5 +80,35 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region InPlaceSwapper
+
+        [TestMethod]
+        public void BasicInPlaceSwapperTest()
+        {
+            InPlaceSwapper swapper = new InPlaceSwapper();
+            int a = 7;
+            int b = 11;
+
+            swapper.Swap(ref a, ref b);
+
+            Assert.AreEqual(11, a);
+            Assert.AreEqual(7, b);
+        }
+
+        [TestMethod]
+        public void ZeroInPlaceSwapperTest()
+        {
+            InPlaceSwapper swapper = new InPlaceSwapper();
+            int a = 7;
+            int b = 0;
+
+            swapper.Swap(ref a, ref b);
+
+            Assert.AreEqual(0, a);
+            Assert.AreEqual(7, b);
+        }
+
+        #endregion
     }
 }
