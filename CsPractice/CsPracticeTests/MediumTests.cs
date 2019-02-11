@@ -110,5 +110,219 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region TicTacToeEvaluator
+
+        [TestMethod]
+        public void FirstRowXWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.X;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.X;
+            cells[2, 0] = Token.X;
+            cells[2, 1] = Token.O;
+            cells[2, 2] = Token.O;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.XWins, result);
+        }
+
+        [TestMethod]
+        public void SecondRowOWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.O;
+            cells[0, 2] = Token.X;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.O;
+            cells[2, 0] = Token.X;
+            cells[2, 1] = Token.X;
+            cells[2, 2] = Token.None;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.OWins, result);
+        }
+
+        [TestMethod]
+        public void ThirdRowXWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.None;
+            cells[0, 1] = Token.None;
+            cells[0, 2] = Token.None;
+            cells[1, 0] = Token.None;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.O;
+            cells[2, 0] = Token.X;
+            cells[2, 1] = Token.X;
+            cells[2, 2] = Token.X;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.XWins, result);
+        }
+
+        [TestMethod]
+        public void FirstColumnOWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.O;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.None;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.X;
+            cells[2, 0] = Token.O;
+            cells[2, 1] = Token.X;
+            cells[2, 2] = Token.X;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.OWins, result);
+        }
+
+        [TestMethod]
+        public void SecondColumnXWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.O;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.None;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.X;
+            cells[1, 2] = Token.None;
+            cells[2, 0] = Token.None;
+            cells[2, 1] = Token.X;
+            cells[2, 2] = Token.None;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.XWins, result);
+        }
+
+        [TestMethod]
+        public void ThirdColumnOWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.O;
+            cells[1, 0] = Token.X;
+            cells[1, 1] = Token.X;
+            cells[1, 2] = Token.O;
+            cells[2, 0] = Token.O;
+            cells[2, 1] = Token.None;
+            cells[2, 2] = Token.O;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.OWins, result);
+        }
+
+        [TestMethod]
+        public void FirstDiagonalXWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.O;
+            cells[0, 2] = Token.None;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.X;
+            cells[1, 2] = Token.O;
+            cells[2, 0] = Token.O;
+            cells[2, 1] = Token.None;
+            cells[2, 2] = Token.X;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.XWins, result);
+        }
+
+        [TestMethod]
+        public void SecondDiagonalOWinsTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.O;
+            cells[1, 0] = Token.X;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.X;
+            cells[2, 0] = Token.O;
+            cells[2, 1] = Token.O;
+            cells[2, 2] = Token.X;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.OWins, result);
+        }
+
+        [TestMethod]
+        public void DrawTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.O;
+            cells[0, 2] = Token.X;
+            cells[1, 0] = Token.O;
+            cells[1, 1] = Token.O;
+            cells[1, 2] = Token.X;
+            cells[2, 0] = Token.X;
+            cells[2, 1] = Token.X;
+            cells[2, 2] = Token.O;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.Draw, result);
+        }
+
+        [TestMethod]
+        public void NoVictoryTicTacToeTest()
+        {
+            TicTacToeEvaluator evaluator = new TicTacToeEvaluator();
+            Token[,] cells = new Token[3, 3];
+            cells[0, 0] = Token.X;
+            cells[0, 1] = Token.X;
+            cells[0, 2] = Token.O;
+            cells[1, 0] = Token.X;
+            cells[1, 1] = Token.X;
+            cells[1, 2] = Token.O;
+            cells[2, 0] = Token.O;
+            cells[2, 1] = Token.None;
+            cells[2, 2] = Token.None;
+            Board board = new Board() { Cells = cells };
+
+            GameResult result = evaluator.HasWon(board);
+
+            Assert.AreEqual(GameResult.NoVictory, result);
+        }
+
+        #endregion
     }
 }
