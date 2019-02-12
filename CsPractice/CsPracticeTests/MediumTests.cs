@@ -352,5 +352,29 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region NoComparisonMaxxer
+
+        [TestMethod]
+        public void BasicNoComparisonMaxTest()
+        {
+            NoComparisonMaxxer maxxer = new NoComparisonMaxxer();
+
+            int result = maxxer.Max(10, 7);
+
+            Assert.AreEqual(10, result);
+        }
+
+        [TestMethod]
+        public void NegativeNoComparisonMaxTest()
+        {
+            NoComparisonMaxxer maxxer = new NoComparisonMaxxer();
+
+            int result = maxxer.Max(-10, 7);
+
+            Assert.AreEqual(7, result);
+        }
+
+        #endregion
     }
 }
