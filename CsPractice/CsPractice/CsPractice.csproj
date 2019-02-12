@@ -82,6 +82,7 @@
     <Compile Include="Problems\LinkedLists\LinkedListReverser.cs" />
     <Compile Include="Problems\LinkedLists\LoopDetector.cs" />
     <Compile Include="Problems\Medium\InPlaceSwapper.cs" />
+    <Compile Include="Problems\Medium\SmallestDiffer.cs" />
     <Compile Include="Problems\Medium\TicTacToeEvaluator.cs" />
     <Compile Include="Problems\OODesign\CallCenterProblem.cs" />
     <Compile Include="Problems\Recursion\MagicIndexFinder.cs" />

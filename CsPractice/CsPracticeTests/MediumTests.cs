@@ -324,5 +324,33 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region SmallestDiffer
+
+        [TestMethod]
+        public void BasicSmallestDiffTest()
+        {
+            SmallestDiffer differ = new SmallestDiffer();
+            int[] a = new int[] { 1, 3, 15, 11, 2 };
+            int[] b = new int[] { 23, 127, 235, 19, 8 };
+
+            int result = differ.GetSmallestDiff(a, b);
+
+            Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        public void AsymetricSmallestDiffTest()
+        {
+            SmallestDiffer differ = new SmallestDiffer();
+            int[] a = new int[] { 7, 9, 1, 15, 6 };
+            int[] b = new int[] { 18, 2 };
+
+            int result = differ.GetSmallestDiff(a, b);
+
+            Assert.AreEqual(1, result);
+        }
+
+        #endregion
     }
 }
