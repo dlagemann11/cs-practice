@@ -463,5 +463,43 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region MatrixZeroer
+
+        [TestMethod]
+        public void BasicMatrixZeroerTest()
+        {
+            MatrixZeroer zeroer = new MatrixZeroer();
+            int[,] matrix = new int[4, 3];
+            matrix[0, 0] = 0;
+            matrix[0, 1] = 1;
+            matrix[0, 2] = 2;
+            matrix[1, 0] = 10;
+            matrix[1, 1] = 11;
+            matrix[1, 2] = 12;
+            matrix[2, 0] = 20;
+            matrix[2, 1] = 21;
+            matrix[2, 2] = 22;
+            matrix[3, 0] = 30;
+            matrix[3, 1] = 31;
+            matrix[3, 2] = 0;
+
+            zeroer.Zero(matrix);
+
+            Assert.AreEqual(0, matrix[0, 0]);
+            Assert.AreEqual(0, matrix[0, 1]);
+            Assert.AreEqual(0, matrix[0, 2]);
+            Assert.AreEqual(0, matrix[1, 0]);
+            Assert.AreEqual(11, matrix[1, 1]);
+            Assert.AreEqual(0, matrix[1, 2]);
+            Assert.AreEqual(0, matrix[2, 0]);
+            Assert.AreEqual(21, matrix[2, 1]);
+            Assert.AreEqual(0, matrix[2, 2]);
+            Assert.AreEqual(0, matrix[3, 0]);
+            Assert.AreEqual(0, matrix[3, 1]);
+            Assert.AreEqual(0, matrix[3, 2]);
+        }
+
+        #endregion
     }
 }

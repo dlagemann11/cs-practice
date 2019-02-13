@@ -67,6 +67,7 @@
     <Compile Include="DataStructures\Trees\Trie.cs" />
     <Compile Include="DataStructures\Trees\TrieNode.cs" />
     <Compile Include="Problems\ArraysAndStrings\MatrixRotater.cs" />
+    <Compile Include="Problems\ArraysAndStrings\MatrixZeroer.cs" />
     <Compile Include="Problems\ArraysAndStrings\OneAwayChecker.cs" />
     <Compile Include="Problems\ArraysAndStrings\PalindromePermutationChecker.cs" />
     <Compile Include="Problems\ArraysAndStrings\StringCompressor.cs" />
