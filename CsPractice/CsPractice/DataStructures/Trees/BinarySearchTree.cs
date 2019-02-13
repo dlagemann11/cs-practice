@@ -25,10 +25,12 @@ namespace CsPractice.DataStructures.Trees
             else if (comparison < 0)
             {
                 node.Left = new BinaryTreeNode<T>(data);
+                node.Left.Parent = node;
             }
             else
             {
                 node.Right = new BinaryTreeNode<T>(data);
+                node.Right.Parent = node;
             }
         }
 

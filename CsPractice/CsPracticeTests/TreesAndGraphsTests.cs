@@ -69,44 +69,7 @@ namespace CsPracticeTests
 
             expected = new int[] { 15, 14, 13, 12, 11, 10, 9, 8 };
             Assert.IsTrue(TestUtilities.CheckSinglyLinkedList<int>(result[3], expected));
-
-        }
-
-        private BinaryTree<int> GenerateBinaryTree()
-        {
-            BinaryTree<int> tree = new BinaryTree<int>(1);
-            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
-            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
-            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(4);
-            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
-            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
-            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
-            BinaryTreeNode<int> node8 = new BinaryTreeNode<int>(8);
-            BinaryTreeNode<int> node9 = new BinaryTreeNode<int>(9);
-            BinaryTreeNode<int> node10 = new BinaryTreeNode<int>(10);
-            BinaryTreeNode<int> node11 = new BinaryTreeNode<int>(11);
-            BinaryTreeNode<int> node12 = new BinaryTreeNode<int>(12);
-            BinaryTreeNode<int> node13 = new BinaryTreeNode<int>(13);
-            BinaryTreeNode<int> node14 = new BinaryTreeNode<int>(14);
-            BinaryTreeNode<int> node15 = new BinaryTreeNode<int>(15);
-
-            tree.Root.Left = node2;
-            tree.Root.Right = node3;
-            node2.Left = node4;
-            node2.Right = node5;
-            node3.Left = node6;
-            node3.Right = node7;
-            node4.Left = node8;
-            node4.Right = node9;
-            node5.Left = node10;
-            node5.Right = node11;
-            node6.Left = node12;
-            node6.Right = node13;
-            node7.Left = node14;
-            node7.Right = node15;
-
-            return tree;
-        }
+        }        
 
         #endregion
 
@@ -211,5 +174,160 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region BstSuccessorFinder
+
+        [TestMethod]
+        public void FirstRightBstSuccessorFinderTest()
+        {
+            BstSuccessorFinder finder = new BstSuccessorFinder();
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(2);
+            tree.Add(1);
+            tree.Add(5);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(10);
+            tree.Add(12);
+
+            BinaryTreeNode<int> result = finder.GetSuccessor(tree.Root);
+
+            Assert.AreEqual(8, result.Data);
+        }
+
+        [TestMethod]
+        public void FirstLeftOfRightBstSuccessorFinderTest()
+        {
+            BstSuccessorFinder finder = new BstSuccessorFinder();
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(2);
+            tree.Add(1);
+            tree.Add(5);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(10);
+            tree.Add(12);
+
+            BinaryTreeNode<int> result = finder.GetSuccessor(tree.Get(9));
+
+            Assert.AreEqual(10, result.Data);
+        }
+
+        [TestMethod]
+        public void ParentBstSuccessorFinderTest()
+        {
+            BstSuccessorFinder finder = new BstSuccessorFinder();
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(2);
+            tree.Add(1);
+            tree.Add(5);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(10);
+            tree.Add(12);
+
+            BinaryTreeNode<int> result = finder.GetSuccessor(tree.Get(4));
+
+            Assert.AreEqual(5, result.Data);
+        }
+
+        [TestMethod]
+        public void DistantParentBstSuccessorFinderTest()
+        {
+            BstSuccessorFinder finder = new BstSuccessorFinder();
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(2);
+            tree.Add(1);
+            tree.Add(5);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(10);
+            tree.Add(12);
+
+            BinaryTreeNode<int> result = finder.GetSuccessor(tree.Get(5));
+
+            Assert.AreEqual(6, result.Data);
+        }
+
+        [TestMethod]
+        public void NotFoundBstSuccessorFinderTest()
+        {
+            BstSuccessorFinder finder = new BstSuccessorFinder();
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(2);
+            tree.Add(1);
+            tree.Add(5);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(11);
+            tree.Add(10);
+            tree.Add(12);
+
+            BinaryTreeNode<int> result = finder.GetSuccessor(tree.Get(12));
+
+            Assert.IsNull(result);
+        }
+
+        #endregion
+
+        private BinaryTree<int> GenerateBinaryTree()
+        {
+            BinaryTree<int> tree = new BinaryTree<int>(1);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(3);
+            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(4);
+            BinaryTreeNode<int> node5 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node6 = new BinaryTreeNode<int>(6);
+            BinaryTreeNode<int> node7 = new BinaryTreeNode<int>(7);
+            BinaryTreeNode<int> node8 = new BinaryTreeNode<int>(8);
+            BinaryTreeNode<int> node9 = new BinaryTreeNode<int>(9);
+            BinaryTreeNode<int> node10 = new BinaryTreeNode<int>(10);
+            BinaryTreeNode<int> node11 = new BinaryTreeNode<int>(11);
+            BinaryTreeNode<int> node12 = new BinaryTreeNode<int>(12);
+            BinaryTreeNode<int> node13 = new BinaryTreeNode<int>(13);
+            BinaryTreeNode<int> node14 = new BinaryTreeNode<int>(14);
+            BinaryTreeNode<int> node15 = new BinaryTreeNode<int>(15);
+
+            tree.Root.Left = node2;
+            tree.Root.Right = node3;
+            node2.Left = node4;
+            node2.Right = node5;
+            node3.Left = node6;
+            node3.Right = node7;
+            node4.Left = node8;
+            node4.Right = node9;
+            node5.Left = node10;
+            node5.Right = node11;
+            node6.Left = node12;
+            node6.Right = node13;
+            node7.Left = node14;
+            node7.Right = node15;
+
+            return tree;
+        }
     }
 }

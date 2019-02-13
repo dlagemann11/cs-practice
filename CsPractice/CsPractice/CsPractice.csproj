@@ -110,6 +110,7 @@
     <Compile Include="Problems\StacksAndQueues\SetOfStacks.cs" />
     <Compile Include="Problems\Recursion\StairHopper.cs" />
     <Compile Include="Problems\StacksAndQueues\ThreeStacksFromArray.cs" />
+    <Compile Include="Problems\TreesAndGraphs\BstSuccessorFinder.cs" />
     <Compile Include="Problems\TreesAndGraphs\DepthLister.cs" />
     <Compile Include="Problems\TreesAndGraphs\TreeBalanceDetector.cs" />
     <Compile Include="Problems\TreesAndGraphs\BstValidater.cs" />
