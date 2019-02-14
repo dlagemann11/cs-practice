@@ -91,6 +91,7 @@
     <Compile Include="Problems\Recursion\PowerSetFinder.cs" />
     <Compile Include="Problems\Recursion\RecursiveMultiplier.cs" />
     <Compile Include="Problems\Recursion\RobotGridPathfinder.cs" />
+    <Compile Include="Problems\Recursion\TowersOfHanoi.cs" />
     <Compile Include="Problems\SortingAndSearching\AnagramSorter.cs" />
     <Compile Include="Problems\SortingAndSearching\RotatedArraySearcher.cs" />
     <Compile Include="Problems\SortingAndSearching\SortedArrayMerger.cs" />

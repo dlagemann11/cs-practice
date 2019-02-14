@@ -348,5 +348,73 @@ namespace CsPracticeTests
         }
 
         #endregion
+
+        #region TowersOfHanoi
+
+        [TestMethod]
+        public void ThreeTowersOfHanoiTest()
+        {
+            TowersOfHanoi towers = new TowersOfHanoi();
+            Stack<int> origin = new Stack<int>();
+            Stack<int> dest = new Stack<int>();
+            Stack<int> buff = new Stack<int>();
+            origin.Push(3);
+            origin.Push(2);
+            origin.Push(1);
+
+            towers.MoveDisks(origin, dest, buff, 3);
+
+            Assert.AreEqual(1, dest.Pop());
+            Assert.AreEqual(2, dest.Pop());
+            Assert.AreEqual(3, dest.Pop());
+        }
+
+        [TestMethod]
+        public void OneTowersOfHanoiTest()
+        {
+            TowersOfHanoi towers = new TowersOfHanoi();
+            Stack<int> origin = new Stack<int>();
+            Stack<int> dest = new Stack<int>();
+            Stack<int> buff = new Stack<int>();
+            origin.Push(1);
+
+            towers.MoveDisks(origin, dest, buff, 1);
+
+            Assert.AreEqual(1, dest.Pop());
+        }
+
+        [TestMethod]
+        public void TenTowersOfHanoiTest()
+        {
+            TowersOfHanoi towers = new TowersOfHanoi();
+            Stack<int> origin = new Stack<int>();
+            Stack<int> dest = new Stack<int>();
+            Stack<int> buff = new Stack<int>();
+            origin.Push(10);
+            origin.Push(9);
+            origin.Push(8);
+            origin.Push(7);
+            origin.Push(6);
+            origin.Push(5);
+            origin.Push(4);
+            origin.Push(3);
+            origin.Push(2);
+            origin.Push(1);
+
+            towers.MoveDisks(origin, dest, buff, 10);
+
+            Assert.AreEqual(1, dest.Pop());
+            Assert.AreEqual(2, dest.Pop());
+            Assert.AreEqual(3, dest.Pop());
+            Assert.AreEqual(4, dest.Pop());
+            Assert.AreEqual(5, dest.Pop());
+            Assert.AreEqual(6, dest.Pop());
+            Assert.AreEqual(7, dest.Pop());
+            Assert.AreEqual(8, dest.Pop());
+            Assert.AreEqual(9, dest.Pop());
+            Assert.AreEqual(10, dest.Pop());
+        }
+
+        #endregion
     }
 }
